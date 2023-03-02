@@ -6,7 +6,7 @@ import Card from './Card';
 const FilteredDataPage = () => {
   const newData = useSelector((store) => store.filterData.dummyData);
   return (
-    <>
+    <>{newData.length === 0 ? <h1 className='font-bold text-2xl'>No data found matching your filter!!!</h1>:
       <div>
         {newData.map((w) => (
           <Link
@@ -16,7 +16,7 @@ const FilteredDataPage = () => {
             <Card {...w} />
           </Link>
         ))}
-      </div>
+      </div>}
     </>
   );
 };
