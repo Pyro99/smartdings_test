@@ -14,6 +14,7 @@ const Sidebar = () => {
   const handleFilter = (search) => {
     const newData = allData.filter(i => i.name.toLowerCase().includes(search.toLowerCase()));
     dispatch(filteredData(newData));
+    setSearch('');
   }
 
   if (!isVisible) return null;
