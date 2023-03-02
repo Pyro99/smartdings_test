@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { filteredData, sortedData } from '../utils/filterDataSlice';
 
 const Sidebar = () => {
@@ -33,12 +34,12 @@ const Sidebar = () => {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
-        <button
+       <Link to ={'/display/filter'}> <button
           className='px-2 py-1 border border-white shadow-lg mt-4 w-24'
           onClick={() => handleFilter(search)}
         >
           Filter
-        </button>
+        </button></Link>
       </div>
     </div>
   );

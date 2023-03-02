@@ -10,6 +10,7 @@ const filterDataSlice = createSlice({
   reducers: {
     sortedData: (state) => {
       state.dummyData = sortData;
+      state.data = sortData;
     },
     filteredData :(state,action) =>{
       state.dummyData = action.payload;

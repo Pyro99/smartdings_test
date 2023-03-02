@@ -10,6 +10,7 @@ import store from './utils/store';
 import { ShirtList, ShoeList } from './utils/helper';
 import ProductCard from './components/ProductCard';
 import Cart from './components/Cart';
+import FilteredDataPage from './components/FilteredDatapage';
 
 const App = () => {
   return (
@@ -50,6 +51,10 @@ export const appRouter = createBrowserRouter([
           {
             path: 'shoes',
             element: <ProductCard {...ShoeList}/>,
+          },
+          {
+            path: 'filter',
+            element: <FilteredDataPage/>,
           }
         ],
       },
