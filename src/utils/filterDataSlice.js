@@ -9,7 +9,15 @@ const filterDataSlice = createSlice({
   },
   reducers: {
     sortedData: (state) => {
-      state.dummyData = sortData;
+      state.dummyData = state.dummyData.sort((a, b) => {
+        if (a.name < b.name) {
+          return -1;
+        }
+        if (a.name > b.name) {
+          return 1;
+        }
+        return 0;
+      });   
       state.data = sortData;
     },
     filteredData :(state,action) =>{
@@ -18,5 +26,6 @@ const filterDataSlice = createSlice({
   },
 });
 
+export const dummyData = filterDataSlice.dummyData;
 export const { sortedData,filteredData } = filterDataSlice.actions;
 export default filterDataSlice.reducer;
