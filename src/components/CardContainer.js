@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import Card from './Card';
 const CardContainer = () => {
-  const newData = useSelector((store) => store.filterData.data);
+  const newData = useSelector((store) => store.filterData.dummyData);
   return (
     <>
       <div>

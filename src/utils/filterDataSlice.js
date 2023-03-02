@@ -1,17 +1,21 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { filterData, prevData} from './helper';
+import { sortData, prevData} from './helper';
 
 const filterDataSlice = createSlice({
   name: 'filterData',
   initialState: {
     data: prevData,
+    dummyData : prevData,
   },
   reducers: {
-    filteredData: (state) => {
-      state.data = filterData;
+    sortedData: (state) => {
+      state.dummyData = sortData;
     },
+    filteredData :(state,action) =>{
+      state.dummyData = action.payload;
+    }
   },
 });
 
-export const { filteredData } = filterDataSlice.actions;
+export const { sortedData,filteredData } = filterDataSlice.actions;
 export default filterDataSlice.reducer;

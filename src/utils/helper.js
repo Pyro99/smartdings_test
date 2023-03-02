@@ -55,7 +55,7 @@ export const ShoeList = {
 
 
 export const prevData = [...windowPages];
-export const filterData = windowPages.sort((a, b) => {
+export const sortData = windowPages.sort((a, b) => {
   if (a.name < b.name) {
     return -1;
   }
